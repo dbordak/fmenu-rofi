@@ -60,6 +60,7 @@ do
              exit
              ;;
      esac
+     shift 1
 done
 
 function index_files {
@@ -73,5 +74,10 @@ fi
 
 if ( ! $DRY )
 then
-    cat "$INDEX" | `dmenu $DMENU > /tmp/dmenu_find_output.txt` && cat /tmp/dmenu_find_output.txt | xargs xdg-open
+    if [ -z $@ ]
+    then
+        cat "$INDEX"
+    else
+        xdg-open $@ > /dev/null &
+    fi
 fi
