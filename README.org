@@ -1,0 +1,8 @@
+#+Title: fmenu-rofi
+
+A modified version of [[https://github.com/isakkarlsson/fmenu][fmenu]] intended for use with [[https://github.com/DaveDavenport/rofi][rofi]].
+
+As an example, I launch rofi with 
+#+BEGIN_EXAMPLE
+rofi -rnow -switchers "run,window,ssh,fm:fmenu-rofi"
+#+END_EXAMPLE
